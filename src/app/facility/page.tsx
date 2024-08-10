@@ -128,7 +128,7 @@ export default function facilityManagment() {
     <td className="p-2">Incomplete</td>
 </tr>
 </tbody>
-            
+</table>             
 </main>
         
     );
