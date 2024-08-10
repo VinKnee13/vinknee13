@@ -10,40 +10,41 @@ export default function facilityManagment() {
  <thead>
 <tr className="bg-blue-500 text-white">
   <tr>
-    <th>Room</th>
-    <th>Availablility</th>
-    <th>Resident</th>
+    <th className="p-2">Room</th>
+    <th className="p-2">Availablility</th>
+    <th className="p-2">Resident</th>
   </tr>
-  
+</thead>
+<tbody>
   <tr>
-    <td>1-A</td>
-    <td>Occupied</td>
-    <td>Alice Banks</td>
+    <td className="p-2">1-A</td>
+    <td className="p-2">Occupied</td>
+    <td className="p-2">Alice Banks</td>
   </tr>
-   <thead>
- <tbody>
+   
+
     <tr>
-    <td>1-A</td>
-    <td>Occupied</td>
-    <td>Arpit Puri</td>
-  </tr>
-  
-    <tr>
-    <td>1-B</td>
-    <td>Occupied</td>
-    <td>Alice Banks</td>
+    <td className="p-2">1-A</td>
+    <td className="p-2">Occupied</td>
+    <td className="p-2">Arpit Puri</td>
   </tr>
   
     <tr>
-    <td>2-A</td>
-    <td>Occupied</td>
-    <td>Luca Biondi</td>
+    <td className="p-2">1-B</td>
+    <td className="p-2">Occupied</td>
+    <td className="p-2">Alice Banks</td>
+  </tr>
+  
+    <tr>
+    <td className="p-2">2-A</td>
+    <td className="p-2">Occupied</td>
+    <td className="p-2">Luca Biondi</td>
     
   </tr>
-    <tr>
-    <td>2-B</td>
-    <td>Occupied</td>
-    <td>Lucas Griffin</td>
+    <tr className="p-2">
+    <td className="p-2">2-B</td>
+    <td className="p-2">Occupied</td>
+    <td className="p-2">Lucas Griffin</td>
   </tr>
   
     <tr>
@@ -54,21 +55,21 @@ export default function facilityManagment() {
   
   
     <tr>
-    <td>3-B</td>
-    <td>Occupied</td>
-    <td>Jun Hatori</td>
+    <td className="p-2">3-B</td>
+    <td className="p-2">Occupied</td>
+    <td className="p-2">Jun Hatori</td>
   </tr>
   
      <tr>
-    <td>4-A</td>
-    <td>Available</td>
-    <td></td>
+    <td className="p-2">4-A</td>
+    <td className="p-2">Available</td>
+    <td className="p-2"></td>
   </tr>
   
     <tr>
-    <td>4-B</td>
-    <td>Available</td>
-    <td></td>
+    <td className="p-2">4-B</td>
+    <td className="p-2">Available</td>
+    <td className="p-2"></td>
   </tr>
   
    </tbody>
