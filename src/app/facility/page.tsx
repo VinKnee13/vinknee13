@@ -8,8 +8,9 @@ export default function facilityManagment() {
           
          
 
-<div className="Table">
-<table style="width:100%">
+<table className="table-auto border-separate border-spacing-1">
+ <thead>
+<tr className="bg-blue-500 text-white">
   <tr>
     <th>Room</th>
     <th>Availablility</th>
@@ -21,7 +22,8 @@ export default function facilityManagment() {
     <td>Occupied</td>
     <td>Alice Banks</td>
   </tr>
-  
+   <thead>
+ <tbody>
     <tr>
     <td>1-A</td>
     <td>Occupied</td>
@@ -71,7 +73,7 @@ export default function facilityManagment() {
     <td></td>
   </tr>
   
-  
+   </tbody>
   
 </table>
 </div>
