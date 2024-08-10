@@ -62,6 +62,25 @@ export default function facilityManagment() {
   </tr>
 </tbody>
 </table>
+
+
+<h2 className="text-3xl">Reservations</h2>
+<table className="table-auto border-4 border-indigo-500/100">
+ <thead>
+<tr>
+    <th className="p-2">Facility</th>
+    <th className="p-2">Availablility</th>
+    <th className="p-2">Resident</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td className="p-2">Spa</td>
+    <td className="p-2">Reserved</td>
+    <td className="p-2">Alice Banks</td>
+</tr>
+</tbody>
+            
 </main>
         
     );
