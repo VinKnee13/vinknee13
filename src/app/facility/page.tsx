@@ -6,7 +6,7 @@ export default function facilityManagment() {
         <main className="flex min-h-screen flex-col items-center justify-around p-24">
             <h1 className="text-4xl">Facility Management Page</h1>
   <h2 className="text-3xl">Rooms</h2>
-<table className="table-auto border-solid 1px #479 border-spacing-1 bg-indigo-500">
+<table className="table-auto border-indigo-500 border-spacing-1 ">
  <thead>
 <tr>
     <th className="p-2">Room</th>
