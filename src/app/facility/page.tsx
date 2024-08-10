@@ -8,7 +8,7 @@ export default function facilityManagment() {
 
 <table className="table-auto border-separate border-spacing-1">
  <thead>
-<tr className="bg-blue-500 text-white">
+<tr>
     <th className="p-2">Room</th>
     <th className="p-2">Availablility</th>
     <th className="p-2">Resident</th>
