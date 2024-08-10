@@ -63,9 +63,9 @@ export default function facilityManagment() {
   </tr>
 </tbody>
 </table>
-
+<br />
 <h1 className="text-3xl">Reservations</h1>
-          
+<br />          
 <table className="table-auto border-4 border-indigo-500/100">
  <thead>
 <tr>
@@ -103,9 +103,9 @@ export default function facilityManagment() {
   
 </tbody>
 </table>      
-
+<br />
 <h2 className="text-3xl">Maintenance</h2>
-         
+<br />         
 <table className="table-auto border-4 border-indigo-500/100">
  <thead>
 <tr>
