@@ -5,9 +5,9 @@ export default function facilityManagment() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-around p-24">
             <h1 className="text-4xl">Facility Management Page</h1>
-            <br>      
+           
   <h2 className="text-3xl">Rooms</h2>
-<br>
+
 <table className="table-auto border-4 border-indigo-500/100">
  <thead>
 <tr>
@@ -64,9 +64,9 @@ export default function facilityManagment() {
   </tr>
 </tbody>
 </table>
-<br>
+
 <h2 className="text-3xl">Reservations</h2>
-<br>           
+          
 <table className="table-auto border-4 border-indigo-500/100">
  <thead>
 <tr>
@@ -104,9 +104,9 @@ export default function facilityManagment() {
   
 </tbody>
 </table>      
-<br>
+
 <h2 className="text-3xl">Maintenance</h2>
- <br>           
+         
 <table className="table-auto border-4 border-indigo-500/100">
  <thead>
 <tr>
