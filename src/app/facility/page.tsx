@@ -80,7 +80,7 @@ export default function facilityManagment() {
     <td className="p-2">Alice Banks</td>
 </tr>
 </tbody>
-            
+</table>       
 </main>
         
     );
