@@ -15,67 +15,54 @@ export default function facilityManagment() {
 </tr>
 </thead>
 <tbody>
-  <tr>
+<tr>
     <td className="p-2">1-A</td>
     <td className="p-2">Occupied</td>
     <td className="p-2">Alice Banks</td>
-  </tr>
-   
-    <tr>
+</tr>
+<tr>
     <td className="p-2">1-A</td>
     <td className="p-2">Occupied</td>
     <td className="p-2">Arpit Puri</td>
-  </tr>
-  
-    <tr>
+</tr>
+<tr>
     <td className="p-2">1-B</td>
     <td className="p-2">Occupied</td>
     <td className="p-2">Alice Banks</td>
-  </tr>
-  
-    <tr>
+ </tr>
+<tr>
     <td className="p-2">2-A</td>
     <td className="p-2">Occupied</td>
     <td className="p-2">Luca Biondi</td>
-    
-  </tr>
-    <tr className="p-2">
+</tr>
+<tr>
     <td className="p-2">2-B</td>
     <td className="p-2">Occupied</td>
     <td className="p-2">Lucas Griffin</td>
-  </tr>
-  
-    <tr>
-    <td>3-A</td>
-    <td>Occupied</td>
-    <td>Vincent Ni</td>
-  </tr>
-  
-  
-    <tr>
+</tr>
+<tr>
+    <td className="p-2">3-A</td>
+    <td className="p-2">Occupied</td>
+    <td className="p-2">Vincent Ni</td>
+</tr>
+<tr>
     <td className="p-2">3-B</td>
     <td className="p-2">Occupied</td>
     <td className="p-2">Jun Hatori</td>
-  </tr>
-  
-     <tr>
+</tr> 
+<tr>
     <td className="p-2">4-A</td>
     <td className="p-2">Available</td>
     <td className="p-2"></td>
-  </tr>
-  
-    <tr>
+</tr>
+<tr>
     <td className="p-2">4-B</td>
     <td className="p-2">Available</td>
     <td className="p-2"></td>
   </tr>
-  
-   </tbody>
-  
+</tbody>
 </table>
-
-                                                               
-        </main>
+</main>
         
     );
 }
