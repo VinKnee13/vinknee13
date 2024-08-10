@@ -9,11 +9,10 @@ export default function facilityManagment() {
 <table className="table-auto border-separate border-spacing-1">
  <thead>
 <tr className="bg-blue-500 text-white">
-  <tr>
     <th className="p-2">Room</th>
     <th className="p-2">Availablility</th>
     <th className="p-2">Resident</th>
-  </tr>
+</tr>
 </thead>
 <tbody>
   <tr>
@@ -22,7 +21,6 @@ export default function facilityManagment() {
     <td className="p-2">Alice Banks</td>
   </tr>
    
-
     <tr>
     <td className="p-2">1-A</td>
     <td className="p-2">Occupied</td>
