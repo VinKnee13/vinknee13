@@ -1,119 +1,95 @@
-import React from 'react';
+"use client"; // Add this at the top
 
+import React, { useState, useEffect } from 'react';
 
-export default function facilityManagment() {
+// Define a type for the staff member objects
+type StaffMember = {
+  id: string;
+  name: string;
+  role: string;
+  qualifications: string;
+  employmentType: string;
+  remuneration: string;
+  training: string;
+};
 
+export default function StaffManagement() {
+  // Specify that staffList is an array of StaffMember objects
+  const [staffList, setStaffList] = useState<StaffMember[]>([]);
 
+  useEffect(() => {
+    // Fetch staff data when the component mounts
+    fetch('/api/staff')
+      .then((response) => response.json())
+      .then((data) => setStaffList(data));
+  }, []);
 
-     const deleteRoom = (id: string) => {
-    fetch(`/api/facility/${id}`, {
+  // Specify that id is a string
+  const deleteStaff = (id: string) => {
+    fetch(`/api/staff/${id}`, {
       method: 'DELETE',
     }).then(() => {
       // Filter out the staff member with the matching ID
-      setroomList(roomList.filter((room) => room.id !== id));
+      setStaffList(staffList.filter((staff) => staff.id !== id));
     });
   };
 
-  const addRoom = () => {
-    const newRoom: RoomMember = {
-      room: prompt('Enter Room Number:') || '',
-      availability: prompt('Enter Availability:') || '',
-      resident: prompt('Enter Resident:') || '',
+  const addStaff = () => {
+    // Ensure the newStaff object conforms to the StaffMember type
+    const newStaff: StaffMember = {
+      id: prompt('Enter ID:') || '', // Prompt returns null if canceled, so default to an empty string
+      name: prompt('Enter Name:') || '',
+      role: prompt('Enter Role:') || '',
+      qualifications: prompt('Enter Qualifications:') || '',
+      employmentType: prompt('Enter Employment Type:') || '',
+      remuneration: prompt('Enter Remuneration:') || '',
+      training: prompt('Enter Training:') || '',
     };
     
-    return (
-        <main className="flex min-h-screen flex-col items-center justify-around p-24">
-           
-  <h1 className="text-3xl">Rooms</h1>
-<br />
+    fetch('/api/staff', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newStaff),
+    }).then((response) => response.json())
+      .then((data) => setStaffList([...staffList, data]));
+  };
 
-<button onClick={addRoom} className="mt-4 p-2 bg-blue-500 text-white rounded">Add Room</button>
-<table className="table-auto border-4 border-indigo-500/100">
- <thead>
-<tr>
-    <th className="p-2">Room</th>
-    <th className="p-2">Availablility</th>
-    <th className="p-2">Resident</th>
-</tr>
-</thead>
-<tbody>
- {staffList.map((Room) => 
-            <tr key={room.id} className="border-t">
-              <td className="px-4 py-2">{room.room}</td>
-              <td className="px-4 py-2">{room.availability}</td>
-              <td className="px-4 py-2">{room.resident}</td> 
-<td className="px-4 py-2">
-<button onClick={() => deleteRoom(room.id)} className="bg-red-500 text-white p-2 rounded">Delete</button>
-</td>
-</tr>
-))}
-</tbody>
-</table>    
-<br />
-<h1 className="text-3xl">Reservations</h1>
-<br />          
-<table className="table-auto border-4 border-indigo-500/100">
- <thead>
-<tr>
-    <th className="p-2">Facility</th>
-    <th className="p-2">Availablility</th>
-    <th className="p-2">Resident</th>
-    <th className="p-2">Date and Time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td className="p-2">Spa</td>
-    <td className="p-2">Reserved</td>
-    <td className="p-2">Alice Banks</td>
-    <td className="p-2">1/8/24 8:00 - 9:00</td>
-</tr>
-<tr>
-    <td className="p-2">Sauna</td>
-    <td className="p-2">Reserved</td>
-    <td className="p-2">Lucas Griffin</td>
-    <td className="p-2">2/8/24 9:00 - 10:00</td>
-</tr>
-<tr>
-    <td className="p-2">Game Room</td>
-    <td className="p-2">Reserved</td>
-    <td className="p-2">Vincent Ni</td>
-    <td className="p-2">2/8/24 8:00 - 9:00</td>
-</tr>
-<tr>
-    <td className="p-2">Gym</td>
-    <td className="p-2">Available</td>
-    <td className="p-2"></td>
-    <td className="p-2"></td>
-</tr>
-  
-</tbody>
-</table>      
-<br />
-<h2 className="text-3xl">Maintenance</h2>
-<br />         
-<table className="table-auto border-4 border-indigo-500/100">
- <thead>
-<tr>
-    <th className="p-2">Room</th>
-    <th className="p-2">Issue</th>
-    <th className="p-2">Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td className="p-2">1-A</td>
-    <td className="p-2">Heater not working</td>
-    <td className="p-2">Complete</td>
-</tr>
-<tr>
-    <td className="p-2">3-B</td>
-    <td className="p-2">Lights need replacing</td>
-    <td className="p-2">Incomplete</td>
-</tr>
-</tbody>
-</table>             
-</main>
-        
-    );
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-around p-24">
+      <h1 className="text-4xl">Staff Management</h1>
+      <button onClick={addStaff} className="mt-4 p-2 bg-blue-500 text-white rounded">Add Staff</button>
+      <table className="table-auto mt-8 w-full text-left">
+        <thead>
+          <tr>
+            <th className="px-4 py-2">ID</th>
+            <th className="px-4 py-2">Name</th>
+            <th className="px-4 py-2">Role</th>
+            <th className="px-4 py-2">Qualifications</th>
+            <th className="px-4 py-2">Employment Type</th>
+            <th className="px-4 py-2">Remuneration</th>
+            <th className="px-4 py-2">Training</th>
+            <th className="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {staffList.map((staff) => (
+            <tr key={staff.id} className="border-t">
+              <td className="px-4 py-2">{staff.id}</td>
+              <td className="px-4 py-2">{staff.name}</td>
+              <td className="px-4 py-2">{staff.role}</td>
+              <td className="px-4 py-2">{staff.qualifications}</td>
+              <td className="px-4 py-2">{staff.employmentType}</td>
+              <td className="px-4 py-2">{staff.remuneration}</td>
+              <td className="px-4 py-2">{staff.training}</td>
+              <td className="px-4 py-2">
+                <button onClick={() => deleteStaff(staff.id)} className="bg-red-500 text-white p-2 rounded">Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </main>
+  );
 }
