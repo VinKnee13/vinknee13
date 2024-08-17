@@ -18,7 +18,7 @@ export default function facilityManagment() {
 </tr>
 </thead>
 <tbody>
- {staffList.map((Room) => (
+ {staffList.map((Room) => 
             <tr key={room.id} className="border-t">
               <td className="px-4 py-2">{room.Room}</td>
               <td className="px-4 py-2">{room.Availability}</td>
@@ -27,7 +27,6 @@ export default function facilityManagment() {
 <button onClick={() => deleteRoom(room.id)} className="bg-red-500 text-white p-2 rounded">Delete</button>
 </td>
 </tr>
-))}
 </tbody>
 </table>
 <br />
