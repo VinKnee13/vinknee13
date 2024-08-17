@@ -7,6 +7,8 @@ export default function facilityManagment() {
            
   <h1 className="text-3xl">Rooms</h1>
 <br />
+
+<button onClick={addRoom} className="mt-4 p-2 bg-blue-500 text-white rounded">Add Room</button>
 <table className="table-auto border-4 border-indigo-500/100">
  <thead>
 <tr>
@@ -16,51 +18,16 @@ export default function facilityManagment() {
 </tr>
 </thead>
 <tbody>
-<tr>
-    <td className="p-2">1-A</td>
-    <td className="p-2">Occupied</td>
-    <td className="p-2">Alice Banks</td>
+ {staffList.map((Room) => (
+            <tr key={room.id} className="border-t">
+              <td className="px-4 py-2">{room.Room}</td>
+              <td className="px-4 py-2">{room.Availability}</td>
+              <td className="px-4 py-2">{room.Resident}</td> 
+<td className="px-4 py-2">
+<button onClick={() => deleteRoom(room.id)} className="bg-red-500 text-white p-2 rounded">Delete</button>
+</td>
 </tr>
-<tr>
-    <td className="p-2">1-A</td>
-    <td className="p-2">Occupied</td>
-    <td className="p-2">Arpit Puri</td>
-</tr>
-<tr>
-    <td className="p-2">1-B</td>
-    <td className="p-2">Occupied</td>
-    <td className="p-2">Alice Banks</td>
- </tr>
-<tr>
-    <td className="p-2">2-A</td>
-    <td className="p-2">Occupied</td>
-    <td className="p-2">Luca Biondi</td>
-</tr>
-<tr>
-    <td className="p-2">2-B</td>
-    <td className="p-2">Occupied</td>
-    <td className="p-2">Lucas Griffin</td>
-</tr>
-<tr>
-    <td className="p-2">3-A</td>
-    <td className="p-2">Occupied</td>
-    <td className="p-2">Vincent Ni</td>
-</tr>
-<tr>
-    <td className="p-2">3-B</td>
-    <td className="p-2">Occupied</td>
-    <td className="p-2">Jun Hatori</td>
-</tr> 
-<tr>
-    <td className="p-2">4-A</td>
-    <td className="p-2">Available</td>
-    <td className="p-2"></td>
-</tr>
-<tr>
-    <td className="p-2">4-B</td>
-    <td className="p-2">Available</td>
-    <td className="p-2"></td>
-  </tr>
+))}
 </tbody>
 </table>
 <br />
