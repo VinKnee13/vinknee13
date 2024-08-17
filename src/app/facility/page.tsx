@@ -2,6 +2,25 @@ import React from 'react';
 
 
 export default function facilityManagment() {
+
+
+
+     const deleteRoom = (id: string) => {
+    fetch(`/api/facility/${id}`, {
+      method: 'DELETE',
+    }).then(() => {
+      // Filter out the staff member with the matching ID
+      setroomList(roomList.filter((room) => room.id !== id));
+    });
+  };
+
+  const addRoom = () => {
+    const newRoom: RoomMember = {
+      room: prompt('Enter Room Number:') || '',
+      availability: prompt('Enter Availability:') || '',
+      resident: prompt('Enter Resident:') || '',
+    };
+    
     return (
         <main className="flex min-h-screen flex-col items-center justify-around p-24">
            
@@ -20,15 +39,16 @@ export default function facilityManagment() {
 <tbody>
  {staffList.map((Room) => 
             <tr key={room.id} className="border-t">
-              <td className="px-4 py-2">{room.Room}</td>
-              <td className="px-4 py-2">{room.Availability}</td>
-              <td className="px-4 py-2">{room.Resident}</td> 
+              <td className="px-4 py-2">{room.room}</td>
+              <td className="px-4 py-2">{room.availability}</td>
+              <td className="px-4 py-2">{room.resident}</td> 
 <td className="px-4 py-2">
 <button onClick={() => deleteRoom(room.id)} className="bg-red-500 text-white p-2 rounded">Delete</button>
 </td>
 </tr>
+))}
 </tbody>
-</table>
+</table>    
 <br />
 <h1 className="text-3xl">Reservations</h1>
 <br />          
