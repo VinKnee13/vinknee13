@@ -25,13 +25,13 @@ export default function facilityManagement() {
     fetch(`/api/facility/${id}`, {
       method: 'DELETE',
     }).then(() => {
-      // Filter out the staff member with the matching ID
+     
       setRoomList(roomList.filter((room) => room.id !== id));
     });
   };
 
   const addRoom = () => {
-    // Ensure the newStaff object conforms to the StaffMember type
+   
     const newRoom: RoomMember = {
       id: prompt('Enter Room Number:') || '', 
       Availablility: prompt('Enter Availablility:') || '',
@@ -44,9 +44,9 @@ export default function facilityManagement() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newStaff),
+      body: JSON.stringify(newRoom),
     }).then((response) => response.json())
-      .then((data) => setRoomList([...staffList, data]));
+      .then((data) => setRoomList([...roomList, data]));
   };
 
   return (
